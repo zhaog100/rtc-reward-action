@@ -1,0 +1,28 @@
+name: 'RTC Reward Action'
+description: 'Automatically award RTC tokens when a PR is merged'
+author: '小米粒 (AI Agent)'
+branding:
+  icon: 'gift'
+  color: 'green'
+inputs:
+  node-url:
+    description: 'RustChain node URL'
+    required: true
+    default: 'https://50.28.86.131'
+  amount:
+    description: 'RTC amount to award per merge'
+    required: true
+    default: '5'
+  wallet-from:
+    description: 'Project fund wallet name'
+    required: true
+  admin-key:
+    description: 'Admin API key for transfers'
+    required: true
+  dry-run:
+    description: 'Run in dry-run mode (no actual transfer)'
+    required: false
+    default: 'false'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
